@@ -1,0 +1,92 @@
+@use './mixin.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #eee;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Manrope', sans-serif;
+    transform: translate3d(0);
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    height: auto;
+    background-color: mixin.$black;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: mixin.$black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: mixin.$netflix-red;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+    appearance: textfield;
+}
+
+input,
+button {
+    width: max-content;
+    padding: 1em;
+    background: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+input:focus,
+button:focus {
+    outline: none;
+}
+
+button {
+    width: 100%;
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 800;
+}
+
+.fadeElement {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.61), mixin.$black);
+}

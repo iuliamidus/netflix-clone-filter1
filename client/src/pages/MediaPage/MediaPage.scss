@@ -1,0 +1,296 @@
+@use '../../mixin.scss';
+
+.detailedPage {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    min-height: 100vh;
+
+    &_banner {
+        position: relative;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-attachment: fixed !important;
+        background-position: center center !important;
+        width: 100%;
+        height: max-content;
+        min-height: 90vh;
+        padding: 0 2rem 0 2rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        @include mixin.sm-tablet {
+            background-size: cover !important;
+        }
+        @include mixin.tablet {
+            padding: 0 6rem 2rem 6rem;
+            height: 100vh;
+        }
+
+        &_content {
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+            z-index: 10;
+            position: absolute;
+            padding: 0 2rem;
+            @include mixin.tablet {
+                padding: 0;
+                margin-bottom: 3rem;
+                flex-direction: row;
+                position: relative;
+                bottom: 0;
+                left: 0;
+                transform: translate(0, 0);
+            }
+
+            &_poster_image {
+                position: relative;
+                @include mixin.tablet {
+                    width: 300px;
+                    height: 450px;
+                    margin-right: 2rem;
+                }
+
+                .movie_trailer,
+                .season_trailer {
+                    display: block;
+                    width: 100%;
+                    padding: 1.7rem 2rem 1.5rem 2rem;
+                    text-align: center;
+                    border-radius: 5px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 5px;
+                    background-color: mixin.$netflix-red;
+                    color: white;
+                    position: relative;
+                    @include mixin.tablet {
+                        z-index: -1;
+                        position: absolute;
+                        bottom: 8px;
+                        left: 0;
+                        border-radius: 0 0 5px 5px;
+                        transform: translate(0, 100%);
+                    }
+                }
+            }
+
+            &_posterimage {
+                width: 300px;
+                height: 450px;
+                border-radius: 10px;
+                object-fit: contain;
+                display: none;
+                @include mixin.tablet {
+                    display: block;
+                }
+            }
+
+            &_details {
+                margin-bottom: 2rem;
+
+                * {
+                    margin-bottom: 1rem;
+                    color: white;
+                }
+
+                h1 {
+                    font-size: 1.5rem;
+                    font-weight: 800;
+                    display: flex;
+                    margin-bottom: 2rem;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    @include mixin.sm-tablet {
+                        margin-bottom: 1rem;
+                        flex-direction: row;
+                        font-size: 2rem;
+                    }
+
+                    span {
+                        font-size: inherit;
+                        opacity: 0.8;
+                        margin: 0;
+                        @include mixin.tablet {
+                            margin: 0 0 0 1rem;
+                        }
+                    }
+
+                    .runtime {
+                        margin: 0 0 0 1rem;
+                        font-size: 0.8rem;
+                        display: inline-block;
+                        border-radius: 5px;
+                        width: max-content;
+                        padding: 0.5rem 2rem;
+                        background-color: rgba(0, 0, 0, 0.4);
+                    }
+
+                    span.adult {
+                        margin: 0 0 0 1rem;
+                        padding: 0.5rem;
+                        background-color: mixin.$netflix-red;
+                        border-radius: 5px;
+                    }
+                }
+
+                button {
+                    font-size: 2rem;
+                    padding: 0;
+                    background-color: white;
+                    color: mixin.$black;
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+
+                    svg {
+                        margin: 0;
+                    }
+                }
+
+                .genre_container {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .genre {
+                        font-size: 0.8rem;
+                        text-transform: uppercase;
+                        padding: 0.5rem 2rem;
+                        border-radius: 5px;
+                        background-color: white;
+                        color: mixin.$black;
+                        margin-right: 1rem;
+                        opacity: 0.9;
+                    }
+                }
+
+                .overview_text {
+                    overflow: auto;
+                    max-height: 40vh;
+                    width: 100%;
+                    @include mixin.sm-tablet {
+                        width: 70%;
+                    }
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+
+                .creators {
+                    h2 {
+                        font-size: 1.2rem;
+                        font-weight: 800;
+                    }
+                    .creators_container {
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        .creator {
+                            width: max-content;
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            margin-right: 1rem;
+                            background: white;
+                            padding: 0.5rem 2rem;
+                            border-radius: 30px;
+
+                            img {
+                                margin: 0;
+                                margin-right: 1rem;
+                                width: 30px;
+                                height: 30px;
+                                object-fit: contain;
+                            }
+
+                            p {
+                                margin: 0;
+                                color: mixin.$black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &_mediaInfo {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 2rem 2rem;
+        margin-bottom: 4rem;
+        min-height: max-content;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column-reverse;
+        @include mixin.tablet {
+            margin-bottom: 0;
+            padding: 4rem 6rem;
+            min-height: 100vh;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        &_left {
+            flex: 0.7;
+        }
+
+        &_right {
+            flex: 0.3;
+            width: 100%;
+            margin-bottom: 2rem;
+            @include mixin.tablet {
+                margin-bottom: 0;
+                width: 30%;
+            }
+
+            .mediaStats {
+                background-color: mixin.$netflix-red;
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 2rem;
+                @include mixin.tablet {
+                    justify-content: space-between;
+                }
+
+                &_stat {
+                    width: max-content;
+                    margin: 0 1rem 1rem 0;
+
+                    h1 {
+                        color: white;
+                        font-size: 1.2rem;
+                    }
+
+                    p {
+                        opacity: 0.8;
+                        font-size: 0.8rem;
+
+                        img {
+                            background-color: white;
+                            mix-blend-mode: difference;
+                            width: 40px;
+                            height: 40px;
+                            object-fit: contain;
+                            margin: 0 1rem 1rem 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media_section {
+    padding: 4rem 6rem;
+}

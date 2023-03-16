@@ -1,0 +1,18 @@
+$netflix-red: #e50914;
+$black: #0e0e0e;
+
+@mixin phone {
+    @media screen and (min-width: 500px) {
+        @content;
+    }
+}
+@mixin sm-tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media screen and (min-width: 1025px) {
+        @content;
+    }
+}

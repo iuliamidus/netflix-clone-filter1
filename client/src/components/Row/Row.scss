@@ -1,0 +1,36 @@
+@import '../../mixin.scss';
+
+.row {
+    margin-top: 1rem;
+    width: 100%;
+    object-fit: contain;
+    padding: 0 1rem;
+    @include sm-tablet {
+        padding: 0 2rem;
+    }
+
+    &:last-of-types {
+        margin-bottom: 4rem;
+    }
+
+    &_title {
+        color: #eee;
+        font-size: 1.2rem;
+        text-transform: capitalize;
+        @include sm-tablet {
+            font-size: 2rem;
+        }
+    }
+
+    &_postersContainer {
+        display: flex;
+        align-items: center;
+        overflow-y: hidden;
+        overflow-x: auto;
+        padding: 1rem 0;
+
+        &::-webkit-scrollbar {
+            height: 5px;
+        }
+    }
+}

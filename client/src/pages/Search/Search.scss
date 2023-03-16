@@ -1,0 +1,53 @@
+@use '../../mixin.scss';
+
+.searchResults {
+    input {
+        width: 90%;
+        background-color: white;
+        color: mixin.$black;
+        margin-top: 1rem;
+        border-radius: 30px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &_container {
+        padding: 4rem 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+        @include mixin.sm-tablet {
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+
+        @include mixin.tablet {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            justify-content: flex-start;
+            padding: 6rem 2rem;
+        }
+
+        &_image {
+            cursor: pointer;
+            width: max-content;
+            max-height: 200px;
+            margin: 0 1rem 2rem 0;
+            transition: 0.4s ease-in-out;
+            @include mixin.phone {
+                max-height: 300px;
+            }
+
+            img {
+                width: 100px;
+                height: 150px;
+                object-fit: cover;
+                object-position: top center;
+                transition: 0.4s ease-in-out;
+                @include mixin.sm-tablet {
+                    width: 200px;
+                    height: 300px;
+                }
+            }
+        }
+    }
+}

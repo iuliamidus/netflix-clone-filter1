@@ -1,0 +1,74 @@
+.filter-btn {
+    display: inline-block;
+    margin-right: 1rem;
+    position: relative;
+  }
+  
+  .filter-btn span {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #fff;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #e50914;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .filter-btn:hover span {
+    background-color: #b1060f;
+  }
+  
+  .filter-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    z-index: 1;
+    width: 100%;
+    background-color: #141414;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .filter-dropdown.active {
+    display: block;
+  }
+  
+  .filter-option {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .filter-option:hover {
+    background-color: #e50914;
+  }
+  
+  .filter-option.active {
+    background-color: #e50914;
+  }
+  
+  .filter-arrow {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.5rem 0.5rem 0 0.5rem;
+    border-color: #fff transparent transparent transparent;
+    cursor: pointer;
+  }
+  
+  .filter-arrow.active {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  
