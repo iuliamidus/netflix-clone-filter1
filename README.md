@@ -8,7 +8,7 @@
 Clone the repository
 
 ```
-git clone https://github.com/imrhlrvndrn/netflix-clone.git
+git clone https://github.com/iuliamidus/netflix-clone-filter1
 ```
 
 Install the dependencies
